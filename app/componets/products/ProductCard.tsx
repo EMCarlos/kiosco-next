@@ -1,7 +1,7 @@
-"use client";
 import { formatCurrency } from "@/src/utils";
 import { Product } from "@prisma/client/wasm";
 import Image from "next/image";
+import AddProductButton from "./AddProductButton";
 
 interface ProductCardProps {
   product: Product;
@@ -13,7 +13,7 @@ export default function ProductCard({ product }: ProductCardProps) {
       className="border rounded-lg p-3 flex flex-col justify-between items-center"
       style={{
         backgroundColor: "var(--card-background)",
-        borderColor: "var(--card-border)"
+        borderColor: "var(--card-border)",
       }}
     >
       <Image
@@ -29,18 +29,7 @@ export default function ProductCard({ product }: ProductCardProps) {
           {formatCurrency(product.price)}
         </p>
 
-        <button
-          type="button"
-          className="bg-indigo-600 hover:bg-indigo-800 w-full mt-5 p-3 uppercase font-bold cursor-pointer"
-          onClick={() => {
-            console.log("Agregar al carrito");
-          }}
-          style={{
-            color: "var(--foreground)"
-          }}
-        >
-          Agregar
-        </button>
+        <AddProductButton product={product} />
       </div>
     </div>
   );
