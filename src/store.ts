@@ -8,6 +8,7 @@ interface Store {
   increaseQuantity: (id: Product["id"]) => void;
   decreaseQuantity: (id: Product["id"]) => void;
   removeItem: (id: Product["id"]) => void;
+  clearOrder: () => void;
 }
 
 export const useStore = create<Store>((set) => ({
@@ -15,7 +16,9 @@ export const useStore = create<Store>((set) => ({
 
   addToOrder: (product) => {
     set((state) => {
+      // eslint-disable-next-line @typescript-eslint/no-unused-vars
       const { image, categoryId, ...data } = product;
+
       const item = state.order.find((item) => item.id === product.id);
 
       if (item) {
@@ -71,5 +74,9 @@ export const useStore = create<Store>((set) => ({
 
       return { order: updatedOrders };
     });
+  },
+
+  clearOrder: () => {
+    set({ order: [] });
   },
 }));

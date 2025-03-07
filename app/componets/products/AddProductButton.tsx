@@ -12,12 +12,9 @@ const AddProductButton = ({ product }: Props) => {
   return (
     <button
       type="button"
-      className="bg-indigo-600 hover:bg-indigo-800 w-full mt-5 p-3 uppercase font-bold cursor-pointer"
+      className="bg-indigo-600 hover:bg-indigo-800 text-white w-full mt-5 p-3 uppercase font-bold cursor-pointer"
       onClick={() => {
         addToOrder(product);
-      }}
-      style={{
-        color: "var(--foreground)",
       }}
     >
       Agregar
