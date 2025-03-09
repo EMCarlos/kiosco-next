@@ -1,13 +1,13 @@
-import ProductCard from "@/app/componets/products/ProductCard";
+import ProductCard from "@/components/products/ProductCard";
 import prisma from "@/src/lib/prisma";
 
 async function getProducts(category: string) {
   const products = await prisma.product.findMany({
     where: {
       category: {
-        slug: category
-      }
-    }
+        slug: category,
+      },
+    },
   });
 
   return products;

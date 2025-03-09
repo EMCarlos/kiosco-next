@@ -1,7 +1,7 @@
 import { Fragment } from "react";
-import OrderSidebar from "../componets/order/OrderSidebar";
-import OrderSummary from "../componets/order/OrderSummary";
-import ToastNotification from "../componets/order/ui/ToastNotification";
+import OrderSidebar from "../../components/order/OrderSidebar";
+import OrderSummary from "../../components/order/OrderSummary";
+import ToastNotification from "../../components/ui/ToastNotification";
 
 export default function layout({
   children,

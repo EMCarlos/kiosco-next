@@ -1,8 +1,9 @@
 import prisma from "@/src/lib/prisma";
 import { Category } from "@prisma/client/wasm";
 import Link from "next/link";
-import CategoryIcon from "./ui/CategoryIcon";
-import SwitchThemeButton from "./ui/ChangeThemeButton";
+import CategoryIcon from "../ui/CategoryIcon";
+import SwitchThemeButton from "../ui/ChangeThemeButton";
+
 async function getCategories() {
   const categories = await prisma.category.findMany();
   return categories;
