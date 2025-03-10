@@ -7,7 +7,11 @@
   --foreground: #171717;
   --card-background: #ffffff;
   --card-border: #e5e5e5;
+  --bg-gray-50: #f9fafb;
   --text-secondary: #6c6c6c;
+  --text-tertiary: #4b5563;
+  --text-gray-600: #6b728085;
+  --text-gray-900: #111827;
 }
 
 :root[data-theme="dark"] {
@@ -15,7 +19,11 @@
   --foreground: #ededed;
   --card-background: #171717;
   --card-border: #262626;
+  --bg-gray-50: #1a1a1a;
   --text-secondary: #c6c6c6;
+  --text-tertiary: #b8b8b8;
+  --text-gray-600: #d1d5db;
+  --text-gray-900: #f9f9f9;
 }
 
 body {

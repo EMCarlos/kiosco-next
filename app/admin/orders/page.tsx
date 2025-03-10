@@ -20,7 +20,7 @@ const getPendingOrders = async () => {
   return orders;
 };
 
-const OrdersPage = async () => {
+export default async function OrdersPage() {
   const orders = await getPendingOrders();
 
   return (
@@ -41,6 +41,4 @@ const OrdersPage = async () => {
       )}
     </Fragment>
   );
-};
-
-export default OrdersPage;
+}

@@ -9,11 +9,17 @@ export default async function AdminLayout({
   return (
     <>
       <div className="md:flex">
-        <aside className="md:w-72 md:h-screen bg-white">
+        <aside
+          className="md:w-72 md:h-screen border-r border-gray-200"
+          style={{ backgroundColor: "var(--background)" }}
+        >
           <AdminSidebar />
         </aside>
 
-        <main className="md:flex-1 md:h-screen md:overflow-y-scroll bg-gray-100 p-5">
+        <main
+          className="md:flex-1 md:h-screen md:overflow-y-scroll p-5"
+          style={{ backgroundColor: "var(--card-background)" }}
+        >
           {children}
         </main>
       </div>

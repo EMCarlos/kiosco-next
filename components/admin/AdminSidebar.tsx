@@ -1,4 +1,5 @@
 import Logo from "../ui/Logo";
+import SwitchThemeButton from "../ui/SwitchThemeButton";
 import AdminRoute from "./AdminRoute";
 
 export const adminNavigation = [
@@ -12,9 +13,17 @@ export default function AdminSidebar() {
     <>
       <Logo />
       <div className="space-y-3 ">
-        <p className="mt-10 uppercase font-bold text-sm text-gray-600 text-center">
-          Navegación
-        </p>
+        <div className="mt-5 flex items-center justify-space-between w-100 px-5">
+          <p
+            className="uppercase font-bold text-sm text-center"
+            style={{ color: "var(--text-tertiary)" }}
+          >
+            Navegación
+          </p>
+          <div className="ml-auto">
+            <SwitchThemeButton />
+          </div>
+        </div>
         <nav className="flex flex-col">
           {adminNavigation.map((link) => (
             <AdminRoute
