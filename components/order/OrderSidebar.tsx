@@ -3,6 +3,7 @@ import { Category } from "@prisma/client/wasm";
 import Link from "next/link";
 import CategoryIcon from "../ui/CategoryIcon";
 import SwitchThemeButton from "../ui/ChangeThemeButton";
+import Logo from "../ui/Logo";
 
 async function getCategories() {
   const categories = await prisma.category.findMany();
@@ -14,6 +15,7 @@ const OrderSidebar = async () => {
 
   return (
     <aside className="md:w-72 md:h-screen border-r border-gray-200">
+      <Logo />
       <div className="flex justify-center items-center pt-5">
         <h1 className="text-4xl text-center font-black">Categorías</h1>
         <SwitchThemeButton />
