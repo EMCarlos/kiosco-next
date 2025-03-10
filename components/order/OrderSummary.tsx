@@ -2,6 +2,7 @@
 import { createOrder } from "@/actions/create-order-actions";
 import { OrderSchema } from "@/src/schema";
 import { useStore } from "@/src/store";
+import { formatCurrency } from "@/src/utils";
 import { useMemo } from "react";
 import { toast } from "react-toastify";
 import ProductDetailts from "./ProductDetailts";
@@ -60,7 +61,7 @@ const OrderSummary = () => {
 
           <p className="text-2xl mt-20 text-center">
             Total a pagar: {""}
-            <span className="text-amber-500 font-black">{total}</span>
+            <span className="font-bold">{formatCurrency(total)}</span>
           </p>
 
           <form
