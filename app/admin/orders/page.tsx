@@ -1,24 +1,46 @@
-import AdminSidebar from "@/components/admin/AdminSidebar";
-import ToastNotification from "@/components/ui/ToastNotification";
+import OrderCard from "@/components/order/OrderCard";
+import Heading from "@/components/ui/Heading";
+import prisma from "@/src/lib/prisma";
+import { Fragment } from "react";
 
-export default async function AdminLayout({
-  children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
+const getPendingOrders = async () => {
+  const orders = await prisma.order.findMany({
+    where: {
+      status: false,
+    },
+    include: {
+      orderProducts: {
+        include: {
+          product: true,
+        },
+      },
+    },
+  });
+
+  return orders;
+};
+
+const OrdersPage = async () => {
+  const orders = await getPendingOrders();
+
   return (
-    <>
-      <div className="md:flex">
-        <aside className="md:w-72 md:h-screen bg-white">
-          <AdminSidebar />
-        </aside>
+    <Fragment>
+      <Heading>Administrar ordenes</Heading>
 
-        <main className="md:flex-1 md:h-screen md:overflow-y-scroll bg-gray-100 p-5">
-          {children}
-        </main>
-      </div>
-
-      <ToastNotification />
-    </>
+      {orders.length ? (
+        <div className="grid grid-cols-1 lg:grid-cols-2 2xl:grid-cols-3 gap-5 mt-5">
+          {orders.map((order) => (
+            <OrderCard
+              key={order.id}
+              order={order}
+            />
+          ))}
+        </div>
+      ) : (
+        <p className="text-center">No hay ordenes Pendientes</p>
+      )}
+    </Fragment>
   );
-}
+};
+
+export default OrdersPage;
