@@ -4,21 +4,21 @@ import "./globals.css";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
-  subsets: ["latin"]
+  subsets: ["latin"],
 });
 
 const geistMono = Geist({
   variable: "--font-geist-mono",
-  subsets: ["latin"]
+  subsets: ["latin"],
 });
 
 export const metadata: Metadata = {
-  title: "Quiosco Next.js con App Router y Prisma",
-  description: "Quiosco Next.js con App Router y Prisma"
+  title: "Restaurant Demo Next.js",
+  description: "Restaurant Demo Next.js",
 };
 
 export default function RootLayout({
-  children
+  children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
