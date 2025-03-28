@@ -1,4 +1,26 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Food Ordering System
+
+A modern food ordering web application built with Next.js 15, TypeScript, Prisma, and ZOD. This application allows users to browse food categories, view products, and place orders with customization options.
+
+## 🚀 Features
+
+- **Category-based Navigation**: Browse products by categories
+- **Responsive Design**: Fully responsive grid layout that adapts to different screen sizes
+- **Dark/Light Mode**: Built-in theme support with CSS variables
+- **Real-time Updates**: Loading states and smooth transitions
+- **Product Customization**: Allows users to personalize their orders
+
+## 🛠️ Tech Stack
+
+- **Frontend**: Next.js 14, React, TypeScript
+- **Styling**: Tailwind CSS
+- **Database**: Prisma ORM
+- **Image Handling**: Next.js Image Optimization
+- **State Management**: React Hooks
+
+---
+
+## 📦 Project Structure
 
 ## Getting Started
 
