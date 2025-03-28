@@ -15,9 +15,9 @@ async function getProducts(category: string) {
 }
 
 interface Props {
-  params: {
+  params: Promise<{
     category: string;
-  };
+  }>;
 }
 
 export default async function CategoryPage({ params }: Props) {

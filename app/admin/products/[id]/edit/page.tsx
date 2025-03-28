@@ -18,12 +18,13 @@ async function getProductById(id: number) {
   return product;
 }
 
-export default async function EditProductsPage({
+export default async function EditProductPage({
   params,
 }: {
-  params: { id: string };
+  params: Promise<{ id: string }>;
 }) {
-  const product = await getProductById(+params.id);
+  const { id } = await params;
+  const product = await getProductById(+id);
 
   return (
     <>
