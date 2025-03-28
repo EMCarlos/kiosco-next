@@ -1,4 +1,4 @@
-import { formatCurrency } from "@/src/utils";
+import { formatCurrency, getProductImageUrl } from "@/src/utils";
 import { Product } from "@prisma/client/wasm";
 import Image from "next/image";
 import AddProductButton from "./AddProductButton";
@@ -8,6 +8,8 @@ interface ProductCardProps {
 }
 
 export default function ProductCard({ product }: ProductCardProps) {
+  const imagePath = getProductImageUrl(product.image);
+
   return (
     <div
       className="border rounded-lg p-3 flex flex-col justify-between items-center"
@@ -17,7 +19,7 @@ export default function ProductCard({ product }: ProductCardProps) {
       }}
     >
       <Image
-        src={`/products/${product.image}.jpg`}
+        src={imagePath}
         alt={product.name}
         width={350}
         height={200}
