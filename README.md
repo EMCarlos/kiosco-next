@@ -18,6 +18,28 @@ A modern food ordering web application built with Next.js 15, TypeScript, Prisma
 - **Image Handling**: Next.js Image Optimization
 - **State Management**: React Hooks
 
+## 🌐 URLs
+
+- `/`: Home page with main menu and categories
+- `/order/[category]`: Products listing by category
+  - `/order/cafe`
+  - `/order/hamburguesa`
+  - `/order/pizza`
+  - `/order/dona`
+  - `/order/pastel`
+  - `/order/galletas`
+- `/admin/products`: Admin page with products list
+- `/admin/orders`: Admin page with uncompleted orders
+- `/orders`: Order history and tracking
+
+Example URLs:
+
+```bash
+https://kiosco-next-six.vercel.app/order/cafe
+https://kiosco-next-six.vercel.app/admin/products
+https://kiosco-next-six.vercel.app/admin/orders
+```
+
 ---
 
 ## 📦 Project Structure
